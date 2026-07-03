@@ -8,7 +8,7 @@
     <!-- గూగుల్ ఫాంట్స్ -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght=300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -41,7 +41,7 @@
         .banner-box {
             max-width: 1000px;
             width: 95%;
-            margin: 20px auto 30px auto;
+            margin: 20px auto 15px auto;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 5px 20px rgba(0,0,0,0.6);
@@ -54,6 +54,15 @@
             display: block;
             object-fit: contain;
             user-select: none;
+        }
+
+        .site-quote {
+            font-size: 1.05rem;
+            color: #17c3b2;
+            font-style: italic;
+            margin-bottom: 30px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
         }
 
         .section-title {
@@ -140,7 +149,6 @@
             color: #111424;
         }
 
-        /* సింపుల్ & నార్మల్ బటన్స్ స్టైలింగ్ */
         .social-nav {
             margin-bottom: 45px;
             display: flex;
@@ -158,7 +166,6 @@
             width: 90%;
         }
 
-        /* లింక్ తీసేసి నార్మల్ బటన్ లాగా చేసాను */
         .action-btn {
             padding: 12px 30px;
             font-size: 0.95rem;
@@ -193,10 +200,57 @@
 
         .follow-link svg { width: 26px; height: 26px; vertical-align: middle; }
 
-        .conditions-text {
-            font-size: 0.85rem;
-            color: #a0a5c1;
+        /* ద్విభాషా కండిషన్స్ బాక్స్ */
+        .conditions-box {
+            background-color: #111424;
+            border: 1px solid #2a2f45;
+            padding: 22px 25px;
+            border-radius: 8px;
+            max-width: 750px;
+            width: 90%;
             margin-top: 15px;
+            text-align: left;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .conditions-box h4 {
+            color: #ff9f1c;
+            font-size: 1.05rem;
+            margin-bottom: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #2a2f45;
+            padding-bottom: 5px;
+        }
+
+        .conditions-list {
+            list-style-type: none;
+        }
+
+        .conditions-list li {
+            font-size: 0.88rem;
+            color: #ffffff;
+            margin-bottom: 12px;
+            line-height: 1.5;
+            position: relative;
+            padding-left: 22px;
+        }
+
+        .conditions-list li::before {
+            content: "•";
+            color: #ff9f1c;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+            top: -2px;
+        }
+
+        .telugu-text {
+            display: block;
+            color: #a0a5c1;
+            font-size: 0.82rem;
+            margin-top: 2px;
             font-style: italic;
         }
 
@@ -257,6 +311,8 @@
         <img src="banner.jpg" alt="RK Album Designing Banner" onerror="this.onerror=null; this.src='images/banner.jpg';">
     </div>
 
+    <p class="site-quote">"Every Picture Tells a Story... Let Us Design Yours Beautifully!"</p>
+
     <h2 class="section-title">Categories</h2>
 
     <div class="categories-grid">
@@ -285,7 +341,6 @@
         </div>
     </div>
 
-    <!-- లింకులు లేని నార్మల్ బటన్స్ మరియు వర్కింగ్ సోషల్ లింక్స్ -->
     <div class="social-nav">
         <div class="top-buttons">
             <div class="action-btn">Book Now</div>
@@ -306,8 +361,32 @@
             </a>
         </div>
         
-        <!-- Conditions Apply -->
-        <p class="conditions-text">* Conditions Apply</p>
+        <!-- ద్విభాషా నిబంధనల బాక్స్ -->
+        <div class="conditions-box">
+            <h4>* Conditions Apply / నిబంధనలు మరియు షరతులు:</h4>
+            <ul class="conditions-list">
+                <li>
+                    Wedding Album designs will be delivered within 10 working days after photos are received.
+                    <span class="telugu-text">ఫోటోలు అందిన రోజు నుండి 10 వర్కింగ్ డేస్‌లో వెడ్డింగ్ అల్బమ్ డిజైన్స్ ఇవ్వబడును.</span>
+                </li>
+                <li>
+                    Saree Ceremony, Birthday & other category designs will be delivered within 5 working days.
+                    <span class="telugu-text">సారీ సెర్మనీ, బర్త్‌డే మరియు ఇతర కేటగిరీల డిజైన్స్ 5 వర్కింగ్ డేస్‌లో ఇవ్వబడును.</span>
+                </li>
+                <li>
+                    50% advance payment is mandatory to confirm the order.
+                    <span class="telugu-text">ఆర్డర్ కన్ఫర్మ్ కావడానికి 50% అడ్వాన్స్ పేమెంట్ తప్పనిసరి.</span>
+                </li>
+                <li>
+                    A maximum of 2 revision rounds are provided for any layout adjustments.
+                    <span class="telugu-text">డిజైన్ లేఅవుట్ మార్పుల కొరకు గరిష్టంగా 2 సార్లు మాత్రమే అవకాశం ఇవ్వబడును.</span>
+                </li>
+                <li>
+                    Original high-quality photos must be shared for the best design output.
+                    <span class="telugu-text">అద్భుతమైన క్వాలిటీ డిజైన్ కొరకు ఒరిజినల్ హై-క్వాలిటీ ఫోటోలను మాత్రమే పంపగలరు.</span>
+                </li>
+            </ul>
+        </div>
     </div>
 
     <h2 id="galleryHeading" class="gallery-heading">Wedding — 12x36 Designs</h2>
