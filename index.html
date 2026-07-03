@@ -35,34 +35,34 @@
             font-size: 1.5rem;
             font-weight: 700;
             margin: 20px 0;
+            letter-spacing: 0.5px;
         }
 
         .banner-box {
-            max-width: 750px;
-            width: 90%;
-            margin-bottom: 30px;
-            border-radius: 4px;
+            max-width: 1000px;
+            width: 95%;
+            margin: 20px auto 30px auto;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.6);
+            background-color: #111424;
         }
 
         .banner-box img {
             width: 100%;
             height: auto;
             display: block;
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
+            object-fit: contain;
             user-select: none;
         }
 
         .section-title {
             font-size: 1.6rem;
             color: #ffc107;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             font-weight: 600;
         }
 
-        /* 1. కేటగిరీస్ గ్రిడ్ */
         .categories-grid {
             display: flex;
             flex-wrap: wrap;
@@ -70,7 +70,8 @@
             gap: 12px;
             max-width: 1200px;
             width: 95%;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
+            padding: 0 10px;
         }
 
         .category-btn {
@@ -81,8 +82,10 @@
             font-size: 0.95rem;
             font-weight: 600;
             border-radius: 6px;
-            cursor: pointer;
+            text-decoration: none;
             transition: all 0.2s ease;
+            min-width: 140px;
+            cursor: pointer;
         }
 
         .category-btn:hover, .category-btn.active {
@@ -91,9 +94,7 @@
             border-color: #ffc107;
         }
 
-        /* 2. సైజ్ సెలెక్షన్ బాక్స్ (మొదట దాచబడుతుంది) */
         .size-selection-box {
-            display: none; /* క్లిక్ చేసినప్పుడే ఓపెన్ అవుతుంది */
             background-color: #111424;
             border: 1px solid #2a2f45;
             padding: 20px 30px;
@@ -102,6 +103,12 @@
             width: 90%;
             margin-bottom: 40px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        #sizeTitle {
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 600;
         }
 
         .size-grid {
@@ -133,25 +140,74 @@
             color: #111424;
         }
 
+        /* బటన్స్ & సోషల్ లింక్స్ డిజైన్ */
         .social-nav {
-            margin-bottom: 30px;
-        }
-
-        .social-nav a {
-            color: #ffffff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 500;
-        }
-
-        .social-nav a:hover { color: #ffc107; }
-
-        /* 3. గ్యాలరీ సెక్షన్ (మొదట దాచబడుతుంది) */
-        .gallery-section {
-            display: none;
-            width: 100%;
+            margin-bottom: 45px;
+            display: flex;
             flex-direction: column;
             align-items: center;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .top-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            width: 90%;
+        }
+
+        .action-btn {
+            padding: 14px 40px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+        }
+
+        .btn-book { background-color: #ff9f1c; color: #0b132b; }
+        .btn-delivery { background-color: #17c3b2; color: #0b132b; }
+        
+        .follow-container {
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .follow-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: color 0.2s;
+        }
+
+        .follow-link:hover { color: #ffc107; }
+
+        .follow-link svg { width: 26px; height: 26px; vertical-align: middle; }
+
+        .conditions-text {
+            font-size: 0.85rem;
+            color: #a0a5c1;
+            margin-top: 15px;
+            font-style: italic;
         }
 
         .gallery-heading {
@@ -178,6 +234,7 @@
             padding: 15px;
             width: 380px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            text-align: center;
         }
 
         .design-card img {
@@ -185,8 +242,6 @@
             height: auto;
             border-radius: 6px;
             margin-bottom: 12px;
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
             user-select: none;
         }
 
@@ -194,6 +249,7 @@
             font-size: 1.1rem;
             color: #ffffff;
             margin-bottom: 4px;
+            font-weight: 400;
         }
 
         .design-card p {
@@ -207,116 +263,138 @@
 
     <h1 class="site-header">RK Album Designing</h1>
 
-    <!-- బ్యానర్ -->
+    <!-- డబుల్ పాత్ ఫిక్స్డ్ బ్యానర్ -->
     <div class="banner-box">
-        <img src="banner.jpg" alt="RK Album Designing Banner">
+        <img src="banner.jpg" alt="RK Album Designing Banner" onerror="this.onerror=null; this.src='images/banner.jpg';">
     </div>
 
     <h2 class="section-title">Categories</h2>
 
-    <!-- 1. కేటగిరీల బటన్లు -->
     <div class="categories-grid">
-        <button class="category-btn" onclick="selectCategory('Wedding', this)">Wedding</button>
-        <button class="category-btn" onclick="selectCategory('Engagement', this)">Engagement</button>
-        <button class="category-btn" onclick="selectCategory('Haldi', this)">Haldi</button>
-        <button class="category-btn" onclick="selectCategory('Pre Wedding', this)">Pre Wedding</button>
-        <button class="category-btn" onclick="selectCategory('Birthday', this)">Birthday</button>
-        <button class="category-btn" onclick="selectCategory('Baby Shower', this)">Baby Shower</button>
-        <button class="category-btn" onclick="selectCategory('Maternity', this)">Maternity</button>
-        <button class="category-btn" onclick="selectCategory('Cradle Ceremony', this)">Cradle Ceremony</button>
-        <button class="category-btn" onclick="selectCategory('Naming Ceremony', this)">Naming Ceremony</button>
-        <button class="category-btn" onclick="selectCategory('House Warming', this)">House Warming</button>
-        <button class="category-btn" onclick="selectCategory('Events', this)">Events</button>
+        <button class="category-btn active" onclick="filterCategory('Wedding', this)">Wedding</button>
+        <button class="category-btn" onclick="filterCategory('Engagement', this)">Engagement</button>
+        <button class="category-btn" onclick="filterCategory('Haldi', this)">Haldi</button>
+        <button class="category-btn" onclick="filterCategory('Pre Wedding', this)">Pre Wedding</button>
+        <button class="category-btn" onclick="filterCategory('Birthday', this)">Birthday</button>
+        <button class="category-btn" onclick="filterCategory('Baby Shower', this)">Baby Shower</button>
+        <button class="category-btn" onclick="filterCategory('Maternity', this)">Maternity</button>
+        <button class="category-btn" onclick="filterCategory('Cradle Ceremony', this)">Cradle Ceremony</button>
+        <button class="category-btn" onclick="filterCategory('Naming Ceremony', this)">Naming Ceremony</button>
+        <button class="category-btn" onclick="filterCategory('House Warming', this)">House Warming</button>
+        <button class="category-btn" onclick="filterCategory('Events', this)">Events</button>
     </div>
 
-    <!-- 2. సైజ్ సెలెక్షన్ సెక్షన్ (కేటగిరీ క్లిక్ చేసినప్పుడు ఇది కనిపిస్తుంది) -->
-    <div id="sizeBox" class="size-selection-box">
-        <h3 id="sizeBoxTitle" style="color: #ffc107; font-size: 1.1rem;">Select Size for Wedding</h3>
+    <div class="size-selection-box">
+        <h3 id="sizeTitle">Select Size for Wedding</h3>
         <div class="size-grid">
-            <button class="size-btn" onclick="selectSize('13x39', this)">13×39</button>
-            <button class="size-btn" onclick="selectSize('12x36', this)">12×36</button>
-            <button class="size-btn" onclick="selectSize('18x24', this)">18×24</button>
-            <button class="size-btn" onclick="selectSize('17x24', this)">17×24</button>
-            <button class="size-btn" onclick="selectSize('16x24', this)">16×24</button>
-            <button class="size-btn" onclick="selectSize('15x24', this)">15×24</button>
+            <button class="size-btn" onclick="filterSize('13x39', this)">13×39</button>
+            <button class="size-btn active" onclick="filterSize('12x36', this)">12×36</button>
+            <button class="size-btn" onclick="filterSize('18x24', this)">18×24</button>
+            <button class="size-btn" onclick="filterSize('17x24', this)">17×24</button>
+            <button class="size-btn" onclick="filterSize('16x24', this)">16×24</button>
+            <button class="size-btn" onclick="filterSize('15x24', this)">15×24</button>
         </div>
     </div>
 
+    <!-- బుక్ నౌ, ఆన్ టైమ్ డెలివరీ, ఫాలో అస్ ఆన్ వాట్సాప్ & ఇన్‌స్టాగ్రామ్ సెక్షన్ -->
     <div class="social-nav">
-        <a href="#">WhatsApp</a>
-        <a href="#">Instagram</a>
-    </div>
-
-    <!-- 3. ఇమేజ్ గ్యాలరీ సెక్షన్ (సైజ్ క్లిక్ చేసినప్పుడు మాత్రమే ఇమేజెస్ లోడ్ అవుతాయి) -->
-    <div id="gallerySection" class="gallery-section">
-        <h2 id="galleryHeading" class="gallery-heading">Wedding — 12x36 Designs</h2>
-        
-        <!-- ఇక్కడ మీ 12x36 ఇమేజెస్ ఉంటాయి -->
-        <div id="galleryContainer" class="gallery-container">
-            <!-- ఇమేజ్ కార్డ్స్ కింద ఉన్న జావాస్క్రిప్ట్ ద్వారా కంట్రోల్ అవుతాయి -->
+        <div class="top-buttons">
+            <a href="https://wa.me/918886496535" target="_blank" rel="noopener noreferrer" class="action-btn btn-book">
+                Book Now
+            </a>
+            <a href="https://wa.me/918886496535" target="_blank" rel="noopener noreferrer" class="action-btn btn-delivery">
+                On Time Delivery
+            </a>
         </div>
+        
+        <div class="follow-container">
+            <!-- Follow us on WhatsApp -->
+            <a href="https://wa.me/918886496535" target="_blank" rel="noopener noreferrer" class="follow-link">
+                <svg viewBox="0 0 448 512" fill="#25D366"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+                Follow us on WhatsApp
+            </a>
+            
+            <!-- Follow us on Instagram -->
+            <a href="https://www.instagram.com/rkalbumdesigning/" target="_blank" rel="noopener noreferrer" class="follow-link">
+                <svg viewBox="0 0 448 512" fill="#E1306C"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-34.7 0-41.2 33.5-74.7 74.7-74.7 41.2 0 74.7 33.5 74.7 74.7 0 41.2-33.5 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8c14.9 0 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM402.4 344.2c-7.8 19.5-22.9 34.5-42.4 42.4-29.6 11.7-99.9 9-136.1 9s-106.6 2.6-136.1-9c-19.5-7.8-34.5-22.9-42.4-42.4-11.7-29.6-9-99.9-9-136.1s-2.6-106.6 9-136.1c7.8-19.5 22.9-34.5 42.4-42.4 29.6-11.7 99.9-9 136.1-9s106.6-2.6 136.1 9c19.5 7.8 34.5 22.9 42.4 42.4 11.7 29.6 9 99.9 9 136.1s2.7 106.6-9 136.1z"/></svg>
+                Follow us on Instagram
+            </a>
+        </div>
+        
+        <!-- Conditions Apply -->
+        <p class="conditions-text">* Conditions Apply</p>
     </div>
 
-    <!-- డైనమిక్ ఫంక్షనాలిటీ స్క్రిప్ట్ -->
+    <h2 id="galleryHeading" class="gallery-heading">Wedding — 12x36 Designs</h2>
+
+    <div id="galleryContainer" class="gallery-container"></div>
+
     <script>
-        let currentCategory = '';
-        let currentSize = '';
+        let selectedCategory = 'Wedding';
+        let selectedSize = '12x36';
 
-        // 1. కేటగిరీ క్లిక్ చేసినప్పుడు సైజ్ బాక్స్ ఓపెన్ చేసే ఫంక్షన్
-        function selectCategory(category, element) {
-            // అన్ని కేటగిరీ బటన్స్ నుండి active క్లాస్ తీసేయడం
-            document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+        function filterCategory(categoryName, element) {
+            document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
             element.classList.add('active');
-            
-            currentCategory = category;
-            
-            // సైజ్ బాక్స్ హెడ్డింగ్ మార్చడం & చూపించడం
-            document.getElementById('sizeBoxTitle').innerText = `Select Size for ${category}`;
-            document.getElementById('sizeBox').style.display = 'block';
-            
-            // పాత గ్యాలరీని దాచడం
-            document.getElementById('gallerySection').style.display = 'none';
-            document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('active'));
+            selectedCategory = categoryName;
+            document.getElementById('sizeTitle').innerText = `Select Size for ${selectedCategory}`;
+            updateGalleryGrid();
         }
 
-        // 2. సైజ్ క్లిక్ చేసినప్పుడు ఇమేజెస్ చూపించే ఫంక్షన్
-        function selectSize(size, element) {
-            document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('active'));
+        function filterSize(sizeValue, element) {
+            document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
             element.classList.add('active');
-            
-            currentSize = size;
-            
-            // గ్యాలరీ హెడ్డింగ్ అప్‌డేట్ చేయడం
-            document.getElementById('galleryHeading').innerText = `${currentCategory} — ${size} Designs`;
-            
+            selectedSize = sizeValue;
+            updateGalleryGrid();
+        }
+
+        function updateGalleryGrid() {
+            document.getElementById('galleryHeading').innerText = `${selectedCategory} — ${selectedSize.replace('x', '×')} Designs`;
             const container = document.getElementById('galleryContainer');
-            container.innerHTML = ''; // పాత ఇమేజెస్ క్లియర్ చేయడం
+            container.innerHTML = ''; 
             
-            // కేవలం Wedding లో 12x36 క్లిక్ చేసినప్పుడు మాత్రమే మీ ఫొటోలు లోడ్ అవుతాయి
-            if (currentCategory === 'Wedding' && size === '12x36') {
-                const images = ['1.jpg', '2.jpg', '8.jpg', '11.jpg', '3.jpg', '4.jpg'];
-                
-                images.forEach(imgName => {
-                    const count = imgName.replace('.jpg', '');
-                    container.innerHTML += `
-                        <div class="design-card">
-                            <img src="images/wedding/12x36/${imgName}" alt="wedding Design ${count}">
-                            <h3>wedding Design ${count}</h3>
-                            <p>Size: 12x36</p>
-                        </div>
-                    `;
-                });
-                
-                document.getElementById('gallerySection').style.display = 'flex';
-            } else {
-                // ఒకవేళ వేరే సైజులు లేదా కేటగిరీలు క్లిక్ చేస్తే (ప్రస్తుతానికి ఖాళీగా చూపిస్తుంది)
-                container.innerHTML = `<p style="color: #a0a5c1; font-size: 1.1rem; padding: 20px;">No designs uploaded yet for ${currentCategory} (${size}).</p>`;
-                document.getElementById('gallerySection').style.display = 'flex';
-            }
-        }
-    </script>
+            let folderCategory = selectedCategory.toLowerCase().replace(' ', '');
+            let maxCheck = 100; 
+            let loadedAny = false;
 
-    <!-- రైట్ క్లిక్ ప్రొటెక్షన్ స్క్రిప్ట్ -->
-    <script src="script.js"></script>
+            for (let num = 1; num <= maxCheck; num++) {
+                const card = document.createElement('div');
+                card.className = 'design-card';
+                
+                const img = document.createElement('img');
+                img.src = `images/${folderCategory}/${selectedSize}/${num}.jpg`;
+                img.alt = `${selectedCategory} Design ${num}`;
+                
+                img.onload = function() {
+                    loadedAny = true;
+                    card.appendChild(img);
+                    
+                    const title = document.createElement('h3');
+                    title.innerText = `${selectedCategory} Design ${num}`;
+                    card.appendChild(title);
+                    
+                    const sizeText = document.createElement('p');
+                    sizeText.innerText = `Size: ${selectedSize.replace('x', '×')}`;
+                    card.appendChild(sizeText);
+                    
+                    container.appendChild(card);
+                };
+                
+                img.onerror = function() {
+                    card.remove();
+                };
+            }
+
+            setTimeout(() => {
+                if (!loadedAny && container.children.length === 0) {
+                    container.innerHTML = `<p style="color: #a0a5c1; font-size: 1.1rem; padding: 20px;">No designs uploaded yet for ${selectedCategory} (${selectedSize.replace('x', '×')}).</p>`;
+                }
+            }, 500);
+        }
+
+        window.onload = function() {
+            updateGalleryGrid();
+        };
+    </script>
 </body>
 </html>
