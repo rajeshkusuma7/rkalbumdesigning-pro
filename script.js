@@ -1,0 +1,24 @@
+// 1. వెబ్‌సైట్‌లో రైట్ క్లిక్ (Right Click) పూర్తిగా బ్లాక్ చేయడానికి
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
+// 2. మొబైల్‌లో ఫొటోలపై లాంగ్ ప్రెస్ చేసి డౌన్‌లోడ్ చేయకుండా లాక్ చేయడానికి
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('img').forEach(img => {
+        // మొబైల్ లాంగ్ ప్రెస్ బ్లాక్
+        img.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+        // ఫొటోని డ్రాగ్ చేసి వేరే చోట సేవ్ చేయకుండా ఆపడానికి
+        img.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+        });
+    });
+});
+
+// 3. ఆల్బమ్ సైజ్ ఫిల్టర్ బటన్స్ పని చేయడానికి (మీ పాత కోడ్ లాంటి లాజిక్)
+function filterAlbum(size) {
+    console.log("Filtering albums by size: " + size);
+    // మీ పాత ఫిల్టరింగ్ కోడ్ ఇక్కడ ఉంటే దాన్ని దీని కింద ఉంచుకోవచ్చు
+}

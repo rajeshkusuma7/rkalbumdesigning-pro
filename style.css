@@ -1,0 +1,275 @@
+/* --- Global Reset & Colors --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #0d1b2a; /* స్క్రీన్‌షాట్‌లో ఉన్న డార్క్ బ్లూ బ్యాక్‌గ్రౌండ్ */
+    color: #ffffff;
+    padding-bottom: 50px;
+}
+
+/* --- Header --- */
+.main-header {
+    text-align: center;
+    padding: 25px 10px 10px 10px;
+}
+
+.main-header h1 {
+    color: #f1c40f;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* --- Banner Section --- */
+.banner-container {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-banner-img {
+    width: 100%;
+    max-height: 450px;
+    object-fit: contain;
+    border: 2px solid #1b263b;
+    border-radius: 8px;
+    background-color: #1b263b; /* ఇమేజ్ లోడ్ అవ్వకపోయినా బ్యాక్‌గ్రౌండ్ నీట్ గా ఉండటానికి */
+}
+
+/* --- Categories Section --- */
+.categories-container {
+    max-width: 1200px;
+    margin: 35px auto 15px auto;
+    padding: 0 15px;
+    text-align: center;
+}
+
+.categories-container h2 {
+    color: #f1c40f;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+}
+
+.categories-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.category-btn {
+    background-color: #1b263b;
+    color: #ffffff;
+    border: 1px solid #415a77;
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    min-width: 140px;
+    transition: all 0.2s ease;
+}
+
+.category-btn:hover {
+    background-color: #415a77;
+    border-color: #f1c40f;
+}
+
+.category-btn.active {
+    background-color: #415a77;
+    border: 2px solid #f1c40f;
+    color: #fff;
+}
+
+/* --- Sizes Section --- */
+.sizes-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 15px;
+    text-align: center;
+}
+
+.sizes-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.size-btn {
+    background-color: #1b263b;
+    color: white;
+    border: 1px solid #415a77;
+    padding: 10px 25px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.size-btn:hover {
+    background-color: #415a77;
+    border-color: #f1c40f;
+}
+
+.size-btn.active {
+    background-color: #f1c40f;
+    color: #0d1b2a;
+    border-color: #f1c40f;
+}
+
+/* --- Quick Social Links --- */
+.quick-links {
+    text-align: center;
+    margin: 25px 0;
+}
+
+.quick-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.quick-links a i {
+    margin-right: 5px;
+    color: #f1c40f;
+}
+
+.quick-links a:hover {
+    color: #f1c40f;
+    text-decoration: underline;
+}
+
+/* --- Dynamic Section Title --- */
+.section-title-container {
+    text-align: center;
+    margin: 40px 0 20px 0;
+    padding: 0 15px;
+}
+
+#galleryTitle {
+    color: #f1c40f;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+/* --- Gallery Section --- */
+.gallery-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.gallery-item {
+    background-color: #1b263b;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    transition: transform 0.2s;
+}
+
+.gallery-item:hover {
+    transform: translateY(-3px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.item-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.item-info h4 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.item-info p {
+    color: #f1c40f;
+    font-size: 0.9rem;
+}
+
+/* --- Footer Contact Style --- */
+.contact-footer {
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
+    background-color: #1b263b;
+    border-top: 2px solid #415a77;
+}
+
+.footer-social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.footer-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+.footer-icon.whatsapp { background-color: #25d366; }
+.footer-icon.instagram { background-color: #e1306c; }
+.footer-icon.phone { background-color: #3498db; }
+.footer-icon:hover { transform: scale(1.1); }
+.contact-footer p { font-size: 0.9rem; color: #aaa; }
+
+/* --- Floating WhatsApp --- */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25d366;
+    color: white;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    text-decoration: none;
+    z-index: 1000;
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 768px) {
+    .category-btn, .size-btn {
+        width: 100%; /* మొబైల్ లో బటన్స్ నీట్ గా ఒకదాని కింద ఒకటి రావడానికి */
+    }
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Wedding 13×39</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#08172f;
+color:white;
+}
+
+header{
+background:#10284d;
+padding:20px;
+text-align:center;
+}
+
+header a{
+color:white;
+text-decoration:none;
+}
+
+.container{
+width:95%;
+max-width:1300px;
+margin:auto;
+padding:40px 0;
+}
+
+h1{
+text-align:center;
+margin-bottom:40px;
+}
+
+.gallery{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:20px;
+
+}
+
+.gallery img{
+
+width:100%;
+
+height:340px;
+
+object-fit:cover;
+
+border-radius:10px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.gallery img:hover{
+
+transform:scale(1.05);
+
+}
+
+.lightbox{
+
+display:none;
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.9);
+
+justify-content:center;
+
+align-items:center;
+
+z-index:999;
+
+}
+
+.lightbox img{
+
+max-width:90%;
+
+max-height:90%;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h2>
+
+<a href="wedding.html">← Back To Wedding Sizes</a>
+
+</h2>
+
+</header>
+
+<div class="container">
+
+<h1>Wedding 13×39 Album Designs</h1>
+
+<div class="gallery">
+
+<img src="images/wedding/13x39/1.jpg">
+
+<img src="images/wedding/13x39/2.jpg">
+
+<img src="images/wedding/13x39/3.jpg">
+
+<img src="images/wedding/13x39/4.jpg">
+
+<img src="images/wedding/13x39/5.jpg">
+
+<img src="images/wedding/13x39/6.jpg">
+
+</div>
+
+</div>
+
+<div class="lightbox" id="lightbox">
+
+<img id="preview">
+
+</div>
+
+<script>
+
+const images=document.querySelectorAll(".gallery img");
+
+const lightbox=document.getElementById("lightbox");
+
+const preview=document.getElementById("preview");
+
+images.forEach(img=>{
+
+img.onclick=()=>{
+
+lightbox.style.display="flex";
+
+preview.src=img.src;
+
+}
+
+});
+
+lightbox.onclick=()=>{
+
+lightbox.style.display="none";
+
+}
+
+</script>
+
+</body>
+</html>
