@@ -4,125 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RK Album Designing</title>
-    
-    <!-- గూగుల్ ఫాంట్స్ -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        body {
-            background-color: #111424;
-            color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .main-title {
-            font-size: 3rem;
-            color: #ffc107;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            color: #a0a5c1;
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-        }
-
-        .filter-section {
-            background-color: #1a1d2e;
-            border: 1px solid #2a2f45;
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-            max-width: 600px;
-            width: 100%;
-        }
-
-        .section-label {
-            font-size: 1.3rem;
-            color: #ffffff;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .btn-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .size-btn {
-            background-color: #22263f;
-            color: #ffffff;
-            border: 2px solid #2a2f45;
-            padding: 12px 5px;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 8px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: block;
-        }
-
-        .size-btn.highlight {
-            background-color: #ffc107;
-            color: #111424;
-            border-color: #ffc107;
-        }
-
-        .size-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.2);
-            border-color: #ffc107;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 10px;
-        }
-
-        .social-btn {
-            color: #ffc107;
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        .social-btn:hover {
-            color: #ffffff;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: #111424; color: #ffffff; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; }
+        .main-title { font-size: 3rem; color: #ffc107; font-weight: 700; margin-bottom: 10px; }
+        .subtitle { color: #a0a5c1; font-size: 1.2rem; margin-bottom: 40px; }
+        .filter-section { background-color: #1a1d2e; border: 1px solid #2a2f45; padding: 30px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.4); max-width: 600px; width: 100%; }
+        .section-label { font-size: 1.3rem; color: #ffffff; margin-bottom: 20px; font-weight: 600; }
+        .btn-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 25px; }
+        .size-btn { background-color: #22263f; color: #ffffff; border: 2px solid #2a2f45; padding: 12px 5px; font-size: 1rem; font-weight: 600; border-radius: 8px; cursor: pointer; text-decoration: none; transition: all 0.3s ease; display: block; }
+        .size-btn.highlight { background-color: #ffc107; color: #111424; border-color: #ffc107; }
+        .size-btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(255, 193, 7, 0.2); border-color: #ffc107; }
+        .social-links { display: flex; justify-content: center; gap: 20px; margin-top: 10px; }
+        .social-btn { color: #ffc107; text-decoration: none; font-size: 1rem; font-weight: 600; transition: color 0.3s; }
+        .social-btn:hover { color: #ffffff; }
     </style>
 </head>
 <body>
-
     <h1 class="main-title">RK Album Designing</h1>
     <p class="subtitle">Select Album Size to View Designs</p>
-
     <div class="filter-section">
         <h2 class="section-label">Select Album Size</h2>
-        
         <div class="btn-grid">
-            <!-- ఇక్కడ లింకులు కరెక్ట్‌గా మీ HTML ఫైల్స్ పేర్లతో సెట్ చేశాను బాస్ -->
             <a href="wedding-13x39.html" class="size-btn">13×39</a>
             <a href="wedding-12x36.html" class="size-btn highlight">12×36</a>
             <a href="wedding-18x24.html" class="size-btn">18×24</a>
@@ -130,14 +36,11 @@
             <a href="wedding-16x24.html" class="size-btn">16×24</a>
             <a href="wedding-15x24.html" class="size-btn">15×24</a>
         </div>
-
         <div class="social-links">
             <a href="#" class="social-btn">💬 WhatsApp</a>
             <a href="#" class="social-btn">📸 Instagram</a>
         </div>
     </div>
-
-    <!-- రైట్ క్లిక్ ప్రొటెక్షన్ స్క్రిప్ట్ -->
     <script src="script.js"></script>
 </body>
 </html>
