@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="te">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RK Album Designing</title>
+    
+    <!-- గూగుల్ ఫాంట్స్ -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
@@ -16,67 +19,143 @@
         }
 
         body {
-            background-color: #111424;
+            background-color: #0b132b;
             color: #ffffff;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            padding: 40px 20px;
+            padding-bottom: 50px;
             text-align: center;
         }
 
-        .section-label {
-            font-size: 1.2rem;
-            color: #ffffff;
-            margin-bottom: 15px;
+        .site-header {
+            color: #ffc107;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+
+        .banner-box {
+            max-width: 750px;
+            width: 90%;
+            margin-bottom: 30px;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .banner-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            color: #ffc107;
+            margin-bottom: 20px;
             font-weight: 600;
         }
 
-        .btn-grid {
+        /* 1. కేటగిరీస్ గ్రిడ్ */
+        .categories-grid {
             display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 15px;
             flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            max-width: 1200px;
+            width: 95%;
+            margin-bottom: 30px;
+        }
+
+        .category-btn {
+            background-color: #1c2541;
+            color: #ffffff;
+            border: 1px solid #3a506b;
+            padding: 14px 28px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .category-btn:hover, .category-btn.active {
+            background-color: #ffc107;
+            color: #0b132b;
+            border-color: #ffc107;
+        }
+
+        /* 2. సైజ్ సెలెక్షన్ బాక్స్ (మొదట దాచబడుతుంది) */
+        .size-selection-box {
+            display: none; /* క్లిక్ చేసినప్పుడే ఓపెన్ అవుతుంది */
+            background-color: #111424;
+            border: 1px solid #2a2f45;
+            padding: 20px 30px;
+            border-radius: 12px;
+            max-width: 700px;
+            width: 90%;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        .size-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .size-grid { grid-template-columns: repeat(3, 1fr); }
         }
 
         .size-btn {
             background-color: #22263f;
             color: #ffffff;
             border: 2px solid #2a2f45;
-            padding: 8px 20px;
+            padding: 8px 0;
             font-size: 0.9rem;
             font-weight: 600;
             border-radius: 6px;
             cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
         }
 
-        .size-btn.highlight {
+        .size-btn:hover, .size-btn.active {
+            border-color: #ffc107;
             background-color: #ffc107;
             color: #111424;
-            border-color: #ffc107;
         }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 40px;
+        .social-nav {
+            margin-bottom: 30px;
         }
 
-        .social-btn {
-            color: #ffc107;
+        .social-nav a {
+            color: #ffffff;
             text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 600;
+            margin: 0 15px;
+            font-weight: 500;
         }
 
-        .gallery-title {
-            font-size: 1.8rem;
+        .social-nav a:hover { color: #ffc107; }
+
+        /* 3. గ్యాలరీ సెక్షన్ (మొదట దాచబడుతుంది) */
+        .gallery-section {
+            display: none;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .gallery-heading {
+            font-size: 1.6rem;
             color: #ffc107;
             margin-bottom: 30px;
             font-weight: 600;
@@ -89,16 +168,16 @@
             justify-content: center;
             max-width: 1300px;
             width: 100%;
+            padding: 0 20px;
         }
 
         .design-card {
-            background-color: #1a1d2e;
-            border: 1px solid #2a2f45;
+            background-color: #1c2541;
+            border: 1px solid #3a506b;
             border-radius: 8px;
             padding: 15px;
             width: 380px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-            text-align: center;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
         }
 
         .design-card img {
@@ -126,64 +205,118 @@
 </head>
 <body>
 
-    <h2 class="section-label">Select Album Size</h2>
-    
-    <div class="btn-grid">
-        <a href="#" class="size-btn">13×39</a>
-        <a href="#" class="size-btn highlight">12×36</a>
-        <a href="#" class="size-btn">18×24</a>
-        <a href="#" class="size-btn">17×24</a>
-        <a href="#" class="size-btn">16×24</a>
-        <a href="#" class="size-btn">15×24</a>
+    <h1 class="site-header">RK Album Designing</h1>
+
+    <!-- బ్యానర్ -->
+    <div class="banner-box">
+        <img src="banner.jpg" alt="RK Album Designing Banner">
     </div>
 
-    <div class="social-links">
-        <a href="#" class="social-btn">💬 WhatsApp</a>
-        <a href="#" class="social-btn">📸 Instagram</a>
+    <h2 class="section-title">Categories</h2>
+
+    <!-- 1. కేటగిరీల బటన్లు -->
+    <div class="categories-grid">
+        <button class="category-btn" onclick="selectCategory('Wedding', this)">Wedding</button>
+        <button class="category-btn" onclick="selectCategory('Engagement', this)">Engagement</button>
+        <button class="category-btn" onclick="selectCategory('Haldi', this)">Haldi</button>
+        <button class="category-btn" onclick="selectCategory('Pre Wedding', this)">Pre Wedding</button>
+        <button class="category-btn" onclick="selectCategory('Birthday', this)">Birthday</button>
+        <button class="category-btn" onclick="selectCategory('Baby Shower', this)">Baby Shower</button>
+        <button class="category-btn" onclick="selectCategory('Maternity', this)">Maternity</button>
+        <button class="category-btn" onclick="selectCategory('Cradle Ceremony', this)">Cradle Ceremony</button>
+        <button class="category-btn" onclick="selectCategory('Naming Ceremony', this)">Naming Ceremony</button>
+        <button class="category-btn" onclick="selectCategory('House Warming', this)">House Warming</button>
+        <button class="category-btn" onclick="selectCategory('Events', this)">Events</button>
     </div>
 
-    <h2 class="gallery-title">Wedding — 12x36 Designs</h2>
-
-    <div class="gallery-container">
-        <!-- 1 -->
-        <div class="design-card">
-            <img src="images/wedding/12x36/1.jpg" alt="wedding Design 1">
-            <h3>wedding Design 1</h3>
-            <p>Size: 12x36</p>
-        </div>
-        <!-- 2 -->
-        <div class="design-card">
-            <img src="images/wedding/12x36/2.jpg" alt="wedding Design 2">
-            <h3>wedding Design 2</h3>
-            <p>Size: 12x36</p>
-        </div>
-        <!-- 8 -->
-        <div class="design-card">
-            <img src="images/wedding/12x36/8.jpg" alt="wedding Design 8">
-            <h3>wedding Design 8</h3>
-            <p>Size: 12x36</p>
-        </div>
-        <!-- 11 -->
-        <div class="design-card">
-            <img src="images/wedding/12x36/11.jpg" alt="wedding Design 11">
-            <h3>wedding Design 11</h3>
-            <p>Size: 12x36</p>
-        </div>
-        <!-- 3 -->
-        <div class="design-card">
-            <img src="images/wedding/12x36/3.jpg" alt="wedding Design 3">
-            <h3>wedding Design 3</h3>
-            <p>Size: 12x36</p>
-        </div>
-        <!-- 4 -->
-        <div class="design-card">
-            <img src="images/wedding/12x36/4.jpg" alt="wedding Design 4">
-            <h3>wedding Design 4</h3>
-            <p>Size: 12x36</p>
+    <!-- 2. సైజ్ సెలెక్షన్ సెక్షన్ (కేటగిరీ క్లిక్ చేసినప్పుడు ఇది కనిపిస్తుంది) -->
+    <div id="sizeBox" class="size-selection-box">
+        <h3 id="sizeBoxTitle" style="color: #ffc107; font-size: 1.1rem;">Select Size for Wedding</h3>
+        <div class="size-grid">
+            <button class="size-btn" onclick="selectSize('13x39', this)">13×39</button>
+            <button class="size-btn" onclick="selectSize('12x36', this)">12×36</button>
+            <button class="size-btn" onclick="selectSize('18x24', this)">18×24</button>
+            <button class="size-btn" onclick="selectSize('17x24', this)">17×24</button>
+            <button class="size-btn" onclick="selectSize('16x24', this)">16×24</button>
+            <button class="size-btn" onclick="selectSize('15x24', this)">15×24</button>
         </div>
     </div>
 
-    <!-- బ్యాక్‌గ్రౌండ్‌లో ప్రొటెక్షన్ రన్ చేసే స్క్రిప్ట్ -->
+    <div class="social-nav">
+        <a href="#">WhatsApp</a>
+        <a href="#">Instagram</a>
+    </div>
+
+    <!-- 3. ఇమేజ్ గ్యాలరీ సెక్షన్ (సైజ్ క్లిక్ చేసినప్పుడు మాత్రమే ఇమేజెస్ లోడ్ అవుతాయి) -->
+    <div id="gallerySection" class="gallery-section">
+        <h2 id="galleryHeading" class="gallery-heading">Wedding — 12x36 Designs</h2>
+        
+        <!-- ఇక్కడ మీ 12x36 ఇమేజెస్ ఉంటాయి -->
+        <div id="galleryContainer" class="gallery-container">
+            <!-- ఇమేజ్ కార్డ్స్ కింద ఉన్న జావాస్క్రిప్ట్ ద్వారా కంట్రోల్ అవుతాయి -->
+        </div>
+    </div>
+
+    <!-- డైనమిక్ ఫంక్షనాలిటీ స్క్రిప్ట్ -->
+    <script>
+        let currentCategory = '';
+        let currentSize = '';
+
+        // 1. కేటగిరీ క్లిక్ చేసినప్పుడు సైజ్ బాక్స్ ఓపెన్ చేసే ఫంక్షన్
+        function selectCategory(category, element) {
+            // అన్ని కేటగిరీ బటన్స్ నుండి active క్లాస్ తీసేయడం
+            document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+            element.classList.add('active');
+            
+            currentCategory = category;
+            
+            // సైజ్ బాక్స్ హెడ్డింగ్ మార్చడం & చూపించడం
+            document.getElementById('sizeBoxTitle').innerText = `Select Size for ${category}`;
+            document.getElementById('sizeBox').style.display = 'block';
+            
+            // పాత గ్యాలరీని దాచడం
+            document.getElementById('gallerySection').style.display = 'none';
+            document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('active'));
+        }
+
+        // 2. సైజ్ క్లిక్ చేసినప్పుడు ఇమేజెస్ చూపించే ఫంక్షన్
+        function selectSize(size, element) {
+            document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('active'));
+            element.classList.add('active');
+            
+            currentSize = size;
+            
+            // గ్యాలరీ హెడ్డింగ్ అప్‌డేట్ చేయడం
+            document.getElementById('galleryHeading').innerText = `${currentCategory} — ${size} Designs`;
+            
+            const container = document.getElementById('galleryContainer');
+            container.innerHTML = ''; // పాత ఇమేజెస్ క్లియర్ చేయడం
+            
+            // కేవలం Wedding లో 12x36 క్లిక్ చేసినప్పుడు మాత్రమే మీ ఫొటోలు లోడ్ అవుతాయి
+            if (currentCategory === 'Wedding' && size === '12x36') {
+                const images = ['1.jpg', '2.jpg', '8.jpg', '11.jpg', '3.jpg', '4.jpg'];
+                
+                images.forEach(imgName => {
+                    const count = imgName.replace('.jpg', '');
+                    container.innerHTML += `
+                        <div class="design-card">
+                            <img src="images/wedding/12x36/${imgName}" alt="wedding Design ${count}">
+                            <h3>wedding Design ${count}</h3>
+                            <p>Size: 12x36</p>
+                        </div>
+                    `;
+                });
+                
+                document.getElementById('gallerySection').style.display = 'flex';
+            } else {
+                // ఒకవేళ వేరే సైజులు లేదా కేటగిరీలు క్లిక్ చేస్తే (ప్రస్తుతానికి ఖాళీగా చూపిస్తుంది)
+                container.innerHTML = `<p style="color: #a0a5c1; font-size: 1.1rem; padding: 20px;">No designs uploaded yet for ${currentCategory} (${size}).</p>`;
+                document.getElementById('gallerySection').style.display = 'flex';
+            }
+        }
+    </script>
+
+    <!-- రైట్ క్లిక్ ప్రొటెక్షన్ స్క్రిప్ట్ -->
     <script src="script.js"></script>
 </body>
 </html>
