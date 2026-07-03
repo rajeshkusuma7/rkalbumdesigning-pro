@@ -8,7 +8,7 @@
     <!-- గూగుల్ ఫాంట్స్ -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght=300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -140,7 +140,7 @@
             color: #111424;
         }
 
-        /* బటన్స్ & సోషల్ లింక్స్ డిజైన్ */
+        /* సింపుల్ & నార్మల్ బటన్స్ స్టైలింగ్ */
         .social-nav {
             margin-bottom: 45px;
             display: flex;
@@ -158,27 +158,17 @@
             width: 90%;
         }
 
+        /* లింక్ తీసేసి నార్మల్ బటన్ లాగా చేసాను */
         .action-btn {
-            padding: 14px 40px;
-            font-size: 1.05rem;
-            font-weight: 700;
-            border-radius: 8px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.2s, box-shadow 0.2s;
-            cursor: pointer;
-            border: none;
+            padding: 12px 30px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 6px;
+            border: 1px solid #3a506b;
+            background-color: #1c2541;
+            color: #ffffff;
+            user-select: none;
         }
-
-        .action-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-        }
-
-        .btn-book { background-color: #ff9f1c; color: #0b132b; }
-        .btn-delivery { background-color: #17c3b2; color: #0b132b; }
         
         .follow-container {
             display: flex;
@@ -263,7 +253,6 @@
 
     <h1 class="site-header">RK Album Designing</h1>
 
-    <!-- డబుల్ పాత్ ఫిక్స్డ్ బ్యానర్ -->
     <div class="banner-box">
         <img src="banner.jpg" alt="RK Album Designing Banner" onerror="this.onerror=null; this.src='images/banner.jpg';">
     </div>
@@ -296,15 +285,11 @@
         </div>
     </div>
 
-    <!-- బుక్ నౌ, ఆన్ టైమ్ డెలివరీ, ఫాలో అస్ ఆన్ వాట్సాప్ & ఇన్‌స్టాగ్రామ్ సెక్షన్ -->
+    <!-- లింకులు లేని నార్మల్ బటన్స్ మరియు వర్కింగ్ సోషల్ లింక్స్ -->
     <div class="social-nav">
         <div class="top-buttons">
-            <a href="https://wa.me/918886496535" target="_blank" rel="noopener noreferrer" class="action-btn btn-book">
-                Book Now
-            </a>
-            <a href="https://wa.me/918886496535" target="_blank" rel="noopener noreferrer" class="action-btn btn-delivery">
-                On Time Delivery
-            </a>
+            <div class="action-btn">Book Now</div>
+            <div class="action-btn">On Time Delivery</div>
         </div>
         
         <div class="follow-container">
