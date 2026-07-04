@@ -21,4 +21,45 @@ document.addEventListener('DOMContentLoaded', () => {
 function filterAlbum(size) {
     console.log("Filtering albums by size: " + size);
     // మీ పాత ఫిల్టరింగ్ కోడ్ ఇక్కడ ఉంటే దాన్ని దీని కింద ఉంచుకోవచ్చు
-}
+}// Disable Right Click
+document.addEventListener("contextmenu", e => e.preventDefault());
+
+// Disable Copy, Cut, Paste
+["copy","cut","paste"].forEach(event => {
+    document.addEventListener(event, e => e.preventDefault());
+});
+
+// Disable Text Selection
+document.addEventListener("selectstart", e => e.preventDefault());
+
+// Disable Drag
+document.addEventListener("dragstart", e => e.preventDefault());
+
+// Disable Keyboard Shortcuts
+document.addEventListener("keydown", function(e){
+
+    if(e.key === "F12"){
+        e.preventDefault();
+    }
+
+    if(e.ctrlKey){
+        const blocked = ["a","c","x","v","u","s","p","i","j","k","h","o"];
+
+        if(blocked.includes(e.key.toLowerCase())){
+            e.preventDefault();
+        }
+    }
+
+    if(
+        e.ctrlKey &&
+        e.shiftKey &&
+        ["i","j","c","k"].includes(e.key.toLowerCase())
+    ){
+        e.preventDefault();
+    }
+
+    if(e.key === "PrintScreen"){
+        navigator.clipboard.writeText("");
+        e.preventDefault();
+    }
+});
